@@ -580,7 +580,9 @@ var attributionList = document.createElement("li");
 attributionList.innerHTML = `
 	<a href="https://github.com/qgis2web/qgis2web">qgis2web</a> &middot;
 	<a href="https://openlayers.org/">OpenLayers</a> &middot;
-	<a href="https://qgis.org/">QGIS</a>	
+	<a href="https://qgis.org/">QGIS</a>	&middot;
+	<a href="https://datacatalog.worldbank.org/search/dataset/0038272">世界銀行</a>	&middot;
+	<a href="https://note.com/kentoide">@KentoIDE</a>	
 `;
 var bottomAttributionUl = bottomAttribution.element.querySelector("ul");
 if (bottomAttributionUl) {
