@@ -1,64 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <link rel="stylesheet" href="./resources/ol.css">
-        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
-        <link rel="stylesheet" href="./resources/qgis2web.css">
-        <style>
-        html, body {
-            background-color: #ffffff;
-        }
-        .ol-control > * {
-            background-color: #f8f8f8!important;
-            color: #444444!important;
-            border-radius: 0px;
-        }
-        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
-            color: #444444!important;
-        }
-        .search-layer-input-search {
-            background-color: #f8f8f8!important;
-        }
-        .ol-control > *:focus, .ol-control >*:hover {
-            background-color: rgba(248, 248, 248, 0.7)!important;
-        } 
-        .ol-control {
-            background-color: rgba(255,255,255,.4) !important;
-            padding: 2px !important;
-        } 
-        </style>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="stylesheet" href="./resources/ol.css" />
+    <link rel="stylesheet" href="resources/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="./resources/ol-layerswitcher.css" />
+    <link rel="stylesheet" href="./resources/qgis2web.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title></title>
+  </head>
+  <body>
+    <div id="map">
+      <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+      </div>
+    </div>
+    <button
+      class="slide-panel-toggle"
+      id="slidePanelToggle"
+      title="パネルを開く/閉じる"
+    >
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <div class="slide-panel" id="slidePanel">
+      <div class="slide-panel-content">
+        <div class="groups-panel">
+          <div class="group-section">
+            <div class="group-title">TPP</div>
+            <ul class="country-list">
+              <li>日本</li>
+              <li>オーストラリア</li>
+              <li>ブルネイ</li>
+              <li>カナダ</li>
+              <li>チリ</li>
+              <li>マレーシア</li>
+              <li>メキシコ</li>
+              <li>ニュージーランド</li>
+              <li>ペルー</li>
+              <li>シンガポール</li>
+              <li>ベトナム</li>
+              <li>イギリス</li>
+            </ul>
+          </div>
 
-        <style>
-        html, body, #map {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        </style>
-        <title></title>
-    </head>
-    <body>
-        <div id="map">
-            <div id="popup" class="ol-popup">
-                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-                <div id="popup-content"></div>
+          <div class="group-section">
+            <div class="group-title">ASEAN</div>
+            <ul class="country-list">
+              <li>インドネシア</li>
+              <li>マレーシア</li>
+              <li>フィリピン</li>
+              <li>シンガポール</li>
+              <li>タイ</li>
+              <li>ブルネイ</li>
+              <li>ベトナム</li>
+              <li>ラオス</li>
+              <li>ミャンマー</li>
+              <li>カンボジア</li>
+            </ul>
+          </div>
+
+          <div class="group-section">
+            <div class="group-title">EU</div>
+            <ul class="country-list">
+              <li>オーストリア</li>
+              <li>ベルギー</li>
+              <li>ブルガリア</li>
+              <li>クロアチア</li>
+              <li>キプロス</li>
+              <li>チェコ</li>
+              <li>デンマーク</li>
+              <li>エストニア</li>
+              <li>フィンランド</li>
+              <li>フランス</li>
+              <li>ドイツ</li>
+              <li>ギリシャ</li>
+              <li>ハンガリー</li>
+              <li>アイルランド</li>
+              <li>イタリア</li>
+              <li>ラトビア</li>
+              <li>リトアニア</li>
+              <li>ルクセンブルク</li>
+              <li>マルタ</li>
+              <li>オランダ</li>
+              <li>ポーランド</li>
+              <li>ポルトガル</li>
+              <li>ルーマニア</li>
+              <li>スロバキア</li>
+              <li>スロベニア</li>
+              <li>スペイン</li>
+              <li>スウェーデン</li>
+            </ul>
+          </div>
+
+          <div class="group-section">
+            <div class="group-title">AU</div>
+            <ul class="country-list">
+              <li>全アフリカ55カ国</li>
+            </ul>
+            <div class="suspended-countries">
+              加入資格停止国: マリ、ギアナ、スーダン、ブルキナファソ、ニジェール
             </div>
+          </div>
+
+          <div class="group-section">
+            <div class="group-title">SCO</div>
+            <ul class="country-list">
+              <li>中国</li>
+              <li>ロシア</li>
+              <li>インド</li>
+              <li>パキスタン</li>
+              <li>カザフスタン</li>
+              <li>キルギス</li>
+              <li>タジキスタン</li>
+              <li>ウズベキスタン</li>
+              <li>イラン</li>
+            </ul>
+          </div>
         </div>
-        <script src="resources/qgis2web_expressions.js"></script>
-        <script src="./resources/functions.js"></script>
-        <script src="./resources/ol.js"></script>
-        <script src="./resources/ol-layerswitcher.js"></script>
-        <script src="layers/base_map_1.js"></script><script src="layers/CSTO_2.js"></script><script src="layers/AU_3.js"></script><script src="layers/AU_4.js"></script><script src="layers/NATO_5.js"></script><script src="layers/ASEAN_6.js"></script><script src="layers/EU_7.js"></script>
-        <script src="styles/base_map_1_style.js"></script><script src="styles/CSTO_2_style.js"></script><script src="styles/AU_3_style.js"></script><script src="styles/AU_4_style.js"></script><script src="styles/NATO_5_style.js"></script><script src="styles/ASEAN_6_style.js"></script><script src="styles/EU_7_style.js"></script>
-        <script src="./layers/layers.js" type="text/javascript"></script> 
-        <script src="./resources/Autolinker.min.js"></script>
-        <script src="./resources/qgis2web.js"></script>
-    </body>
+      </div>
+    </div>
+    <script src="resources/qgis2web_expressions.js"></script>
+    <script src="./resources/functions.js"></script>
+    <script src="./resources/ol.js"></script>
+    <script src="./resources/ol-layerswitcher.js"></script>
+    <script src="layers/_0.js"></script>
+    <script src="layers/SCO_1.js"></script>
+    <script src="layers/AU_2.js"></script>
+    <script src="layers/AU_3.js"></script>
+    <script src="layers/EU_4.js"></script>
+    <script src="layers/ASEAN_5.js"></script>
+    <script src="layers/TPP_6.js"></script>
+    <script src="styles/_0_style.js"></script>
+    <script src="styles/SCO_1_style.js"></script>
+    <script src="styles/AU_2_style.js"></script>
+    <script src="styles/AU_3_style.js"></script>
+    <script src="styles/EU_4_style.js"></script>
+    <script src="styles/ASEAN_5_style.js"></script>
+    <script src="styles/TPP_6_style.js"></script>
+    <script src="./layers/layers.js" type="text/javascript"></script>
+    <script src="./resources/Autolinker.min.js"></script>
+    <script src="./resources/qgis2web.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slidePanel = document.getElementById("slidePanel");
+        const slidePanelToggle = document.getElementById("slidePanelToggle");
+        const toggleIcon = slidePanelToggle.querySelector("i");
+
+        slidePanelToggle.addEventListener("click", function () {
+          slidePanel.classList.toggle("active");
+          if (slidePanel.classList.contains("active")) {
+            toggleIcon.classList.remove("fa-chevron-up");
+            toggleIcon.classList.add("fa-chevron-down");
+          } else {
+            toggleIcon.classList.remove("fa-chevron-down");
+            toggleIcon.classList.add("fa-chevron-up");
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
