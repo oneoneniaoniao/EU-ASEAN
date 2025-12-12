@@ -13,7 +13,7 @@ var lyr__0 = new ol.layer.Vector({
                 style: style__0,
                 popuplayertitle: '世界地図',
                 interactive: false,
-                title: '<img src="styles/legend/_0.png" /> 世界地図'
+                title: '<img src="../styles/legend/_0.png" /> 世界地図'
             });
 var format_SCO_1 = new ol.format.GeoJSON();
 var features_SCO_1 = format_SCO_1.readFeatures(json_SCO_1, 
@@ -28,7 +28,7 @@ var lyr_SCO_1 = new ol.layer.Vector({
                 style: style_SCO_1,
                 popuplayertitle: '上海協力機構（SCO）',
                 interactive: true,
-                title: '<img src="styles/legend/SCO_1.png" /> 上海協力機構（SCO）'
+                title: '<img src="../styles/legend/SCO_1.png" /> 上海協力機構（SCO）'
             });
 var format_AU_2 = new ol.format.GeoJSON();
 var features_AU_2 = format_AU_2.readFeatures(json_AU_2, 
@@ -43,7 +43,7 @@ var lyr_AU_2 = new ol.layer.Vector({
                 style: style_AU_2,
                 popuplayertitle: 'AU加盟資格停止国',
                 interactive: true,
-                title: '<img src="styles/legend/AU_2.png" /> AU加盟資格停止国'
+                title: '<img src="../styles/legend/AU_2.png" /> AU加盟資格停止国'
             });
 var format_AU_3 = new ol.format.GeoJSON();
 var features_AU_3 = format_AU_3.readFeatures(json_AU_3, 
@@ -58,7 +58,7 @@ var lyr_AU_3 = new ol.layer.Vector({
                 style: style_AU_3,
                 popuplayertitle: 'アフリカ連合（AU）',
                 interactive: true,
-                title: '<img src="styles/legend/AU_3.png" /> アフリカ連合（AU）'
+                title: '<img src="../styles/legend/AU_3.png" /> アフリカ連合（AU）'
             });
 var format_EU_4 = new ol.format.GeoJSON();
 var features_EU_4 = format_EU_4.readFeatures(json_EU_4, 
@@ -73,7 +73,7 @@ var lyr_EU_4 = new ol.layer.Vector({
                 style: style_EU_4,
                 popuplayertitle: '欧州連合（EU）',
                 interactive: true,
-                title: '<img src="styles/legend/EU_4.png" /> 欧州連合（EU）'
+                title: '<img src="../styles/legend/EU_4.png" /> 欧州連合（EU）'
             });
 var format_ASEAN_5 = new ol.format.GeoJSON();
 var features_ASEAN_5 = format_ASEAN_5.readFeatures(json_ASEAN_5, 
@@ -88,7 +88,7 @@ var lyr_ASEAN_5 = new ol.layer.Vector({
                 style: style_ASEAN_5,
                 popuplayertitle: '東南アジア諸国連合（ASEAN）',
                 interactive: true,
-                title: '<img src="styles/legend/ASEAN_5.png" /> 東南アジア諸国連合（ASEAN）'
+                title: '<img src="../styles/legend/ASEAN_5.png" /> 東南アジア諸国連合（ASEAN）'
             });
 var format_TPP_6 = new ol.format.GeoJSON();
 var features_TPP_6 = format_TPP_6.readFeatures(json_TPP_6, 
@@ -103,7 +103,7 @@ var lyr_TPP_6 = new ol.layer.Vector({
                 style: style_TPP_6,
                 popuplayertitle: '環太平洋パートナーシップ協定（TPP）',
                 interactive: true,
-                title: '<img src="styles/legend/TPP_6.png" /> 環太平洋パートナーシップ協定（TPP）'
+                title: '<img src="../styles/legend/TPP_6.png" /> 環太平洋パートナーシップ協定（TPP）'
             });
 
 lyr__0.setVisible(true);lyr_SCO_1.setVisible(true);lyr_AU_2.setVisible(true);lyr_AU_3.setVisible(true);lyr_EU_4.setVisible(true);lyr_ASEAN_5.setVisible(true);lyr_TPP_6.setVisible(true);
